@@ -162,13 +162,13 @@ public struct SystemProfiler
 					case .null:
 						jChild[_first.key] = JSON(CreateJSon(data: _child))
 						
-					case .array: // alread exist
+					case .array: // already exist
 						var jValue:Array<JSON> = Array<JSON>()
 						value.arrayValue.forEach{ v in jValue.append(v) }
 						jValue.append(CreateJSon(data: _child))
 						jChild[_first.key] = JSON(jValue)
 						
-					default: // alread exist
+					default: // already exist
 						let jValue = [value, CreateJSon(data: _child)]
 						jChild[_first.key] = JSON(jValue)
 					}
@@ -181,13 +181,13 @@ public struct SystemProfiler
 					case .null:
 						jChild[_first.key] = JSON(_first.value)
 						
-					case .array: // alread exist
+					case .array: // already exist
 						var jValue:Array<String> = Array<String>()
 						value.arrayValue.forEach{ v in jValue.append(v.stringValue) }
 						jValue.append(_first.value)
 						jChild[_first.key] = JSON(jValue)
 						
-					default: // alread exist
+					default: // already exist
 						let jValue = [value.stringValue, _first.value]
 						jChild[_first.key] = JSON(jValue)
 					}
