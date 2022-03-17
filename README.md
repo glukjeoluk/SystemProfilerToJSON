@@ -53,6 +53,6 @@ let SPDataTypes:[String] =
 ]
 
 SPDataTypes.forEach { SPDataType in
-	print(sp.GetJsonString(SPDataType: SPDataType))
+	print(SystemProfiler().GetJsonString(SPDataType: SPDataType))
 }
 ~~~
